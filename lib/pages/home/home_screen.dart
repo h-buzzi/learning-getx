@@ -20,7 +20,9 @@ class HomeScreen extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                Get.to(() => const DetailScreen());
+                Get.toNamed('/detail'); //Named routes
+                //Get.to(() => const DetailScreen()); // Without named routes
+                //Get.off(() => const DetailScreen()); // Prevents from coming back to ancestor screen
               },
               child: const Text('Go to Detail Screen'),
               style: TextButton.styleFrom(
