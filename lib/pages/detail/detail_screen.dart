@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:learning_getx/services/api_service.dart';
 
 class DetailScreen extends StatelessWidget {
-  const DetailScreen({Key? key}) : super(key: key);
+  DetailScreen({Key? key}) : super(key: key);
+
+  final apiService = Get.find<ApiService>();
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +19,7 @@ class DetailScreen extends StatelessWidget {
           },
         ),
       ),
+      body: Center(child: Text(apiService.fetchTextFromApi())),
     );
   }
 }

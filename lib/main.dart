@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity),
       initialRoute: '/home',
       getPages: [
-        GetPage(name: "/home", page: () => const HomeScreen()),
-        GetPage(name: "/detail", page: () => const DetailScreen())
+        GetPage(name: "/home", page: () => HomeScreen()),
+        GetPage(name: "/detail", page: () => DetailScreen())
       ],
     );
   }

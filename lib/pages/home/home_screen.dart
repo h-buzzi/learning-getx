@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:learning_getx/pages/detail/detail_screen.dart';
+import 'package:learning_getx/pages/home/controller/home_controller.dart';
+import 'package:learning_getx/services/api_service.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  HomeScreen({Key? key}) : super(key: key);
+
+  final apiService = Get.put(ApiService());
+  final homeController = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +21,12 @@ class HomeScreen extends StatelessWidget {
             const Text(
               'This is the home screen',
               style: TextStyle(fontSize: 24),
+            ),
+            TextButton(
+              onPressed: homeController.increment,
+              child: Obx(() => Text('${homeController.count}')),
+              style: TextButton.styleFrom(
+                  backgroundColor: Colors.blue, primary: Colors.white),
             ),
             TextButton(
               onPressed: () {
