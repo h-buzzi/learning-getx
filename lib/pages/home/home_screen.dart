@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learning_getx/pages/home/controller/home_controller.dart';
-import 'package:learning_getx/services/api_service.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
-  final apiService = Get.put(ApiService());
-  final homeController = Get.put(HomeController());
+  final homeController = Get.find<HomeController>();
 
   @override
   Widget build(BuildContext context) {

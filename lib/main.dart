@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:learning_getx/pages/detail/detail_screen.dart';
+import 'package:learning_getx/pages/home/binding/home_binding.dart';
 import 'package:learning_getx/pages/home/home_screen.dart';
 
 void main() {
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity),
       initialRoute: '/home',
       getPages: [
-        GetPage(name: "/home", page: () => HomeScreen()),
+        GetPage(
+            name: "/home", page: () => HomeScreen(), binding: HomeBinding()),
         GetPage(name: "/detail", page: () => DetailScreen())
       ],
     );
